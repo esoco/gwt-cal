@@ -485,7 +485,7 @@ public class DayView extends CalendarView {
 		// find the interval clicked and day clicked
 		double interval = Math.floor(relativeY
 				/ (double) getSettings().getPixelsPerInterval());
-		double day = Math.floor((double) relativeX
+		double day = Math.floor(relativeX
 				/ ((double) width / (double) calendarWidget.getDays()));
 
 		// create new appointment date based on click
@@ -512,7 +512,7 @@ public class DayView extends CalendarView {
 		int relativeX = x - left;
 		
 		// find the interval clicked and day clicked
-		double day = Math.floor((double) relativeX
+		double day = Math.floor(relativeX
 				/ ((double) width / (double) calendarWidget.getDays()));
 
 		Date newStartDate = getCoordinatesDate(x, y);

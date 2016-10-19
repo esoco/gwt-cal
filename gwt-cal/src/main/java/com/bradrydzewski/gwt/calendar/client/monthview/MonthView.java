@@ -726,8 +726,8 @@ public class MonthView extends CalendarView implements HasWeekSelectionHandlers<
 		int height = appointmentHeight();
 
 		calculatedCellAppointments = (int)
-            Math.floor((float) (calculatedCellHeight - paddingTop)
-						/ (float) (height + paddingTop)) - 1;
+            Math.floor((calculatedCellHeight - paddingTop)
+						/ (height + paddingTop)) - 1;
 	}
 
 	private static int appointmentPaddingTop() {
@@ -768,7 +768,7 @@ public class MonthView extends CalendarView implements HasWeekSelectionHandlers<
 
 		float left = (float) col / (float) DAYS_IN_A_WEEK * 100f + .5f;
 
-		float width = (1f / (float) DAYS_IN_A_WEEK) * 100f - 1f;
+		float width = (1f / DAYS_IN_A_WEEK) * 100f - 1f;
 
 		float top = calculatedWeekDayHeaderHeight
 				+ (row * calculatedCellOffsetHeight)

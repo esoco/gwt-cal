@@ -82,7 +82,7 @@ public class DayViewLayoutStrategy {
             t.setStart(i * minutesPerInterval);
             t.setEnd(t.getStart() + minutesPerInterval);
             t.setOrder(i);
-            t.setTop((float) i * intervalSize);
+            t.setTop(i * intervalSize);
             t.setBottom(t.getTop() + intervalSize);
             timeBlocks[i] = t;
         }
@@ -279,14 +279,14 @@ public class DayViewLayoutStrategy {
         // been assigned a position in the grid
         for (AppointmentAdapter apptCell : appointmentCells) {
 
-            float width = 1f / (float) apptCell.getIntersectingBlocks().get(0).getTotalColumns() * 100;
+            float width = 1f / apptCell.getIntersectingBlocks().get(0).getTotalColumns() * 100;
             float left = (float) apptCell.getColumnStart() / (float) apptCell.getIntersectingBlocks().get(0).getTotalColumns() * 100;
 
             //AppointmentInterface appt = apptCell.getAppointment();
-            apptCell.setTop((float) apptCell.getCellStart() * intervalSize); // ok!
+            apptCell.setTop(apptCell.getCellStart() * intervalSize); // ok!
             apptCell.setLeft((widthAdj * 100 * dayIndex) + (left * widthAdj) + paddingLeft); // ok
             apptCell.setWidth(width * widthAdj - paddingLeft - paddingRight); // ok!
-            apptCell.setHeight((float) apptCell.getIntersectingBlocks().size() * ((float) intervalSize) - paddingBottom); // ok!
+            apptCell.setHeight(apptCell.getIntersectingBlocks().size() * (intervalSize) - paddingBottom); // ok!
 
             float apptStart = apptCell.getAppointmentStart();
             float apptEnd = apptCell.getAppointmentEnd();
@@ -413,7 +413,7 @@ public class DayViewLayoutStrategy {
                     //now we set the appointment's location
                     //Appointment appt = adapter.getAppointment();
                     float top = adapter.getCellStart() * 25f + 5f;
-                    float width = ((float) adapter.getColumnSpan() + 1f) / days * 100f - 1f; //10f=padding
+                    float width = (adapter.getColumnSpan() + 1f) / days * 100f - 1f; //10f=padding
                     float left = ((float) adapter.getColumnStart()) / days * 100f + .5f; //10f=padding
                     //float left = (float) adapter.getColumnStart() / (float) apptCell.getIntersectingBlocks().get(0).getTotalColumns() * 100;
                     adapter.setWidth(width);
