@@ -15,7 +15,7 @@ apply plugin: 'java'
 apply plugin: 'osgi'
 
 project.group   = 'de.esoco.gwt-cal'
-project.version = '0.9.5-SNAPSHOT'
+project.version = '0.9.5'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
@@ -29,7 +29,6 @@ dependencies
 	compile 'com.allen-sauer.gwt.dnd:gwt-dnd:3.3.4'
     testCompile 'junit:junit:4.+'
 }
-
 
 gwt {
     gwtVersion='2.7.0'
