@@ -15,7 +15,7 @@ apply plugin: 'java'
 apply plugin: 'osgi'
 
 project.group   = 'de.esoco.gwt-cal'
-project.version = '1.0.0'
+project.version = '0.9.5-SNAPSHOT'
 
 sourceCompatibility = 1.7
 targetCompatibility = 1.7
