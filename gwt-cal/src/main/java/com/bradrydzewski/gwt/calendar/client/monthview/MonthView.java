@@ -169,6 +169,7 @@ public class MonthView extends CalendarView implements HasWeekSelectionHandlers<
 	 * displayed. This is where all components are configured and added to the
 	 * RootPanel.
 	 */
+	@Override
 	public void attach(CalendarWidget widget) {
 		super.attach(widget);
 
@@ -398,6 +399,7 @@ public class MonthView extends CalendarView implements HasWeekSelectionHandlers<
 	/**
 	 * Gets the Month View's primary style name.
 	 */
+	@Override
 	public String getStyleName() {
 		return MONTH_VIEW;
 	}
@@ -407,6 +409,7 @@ public class MonthView extends CalendarView implements HasWeekSelectionHandlers<
 	 * selected. If an appointment has been double clicked the OpenEvent will
 	 * get fired for that appointment.
 	 */
+	@Override
 	public void onDoubleClick(Element clickedElement, Event event) {
 		if (clickedElement.equals(appointmentCanvas.getElement())) {
 			if (calendarWidget.getSettings().getTimeBlockClickNumber() == Click.Double) {
@@ -446,6 +449,7 @@ public class MonthView extends CalendarView implements HasWeekSelectionHandlers<
 		}
 	}
 
+	@Override
 	public void onMouseOver(Element element, Event event) {
 		Appointment appointment = findAppointmentByElement(element);
 		calendarWidget.fireMouseOverEvent(appointment, element);
@@ -640,6 +644,7 @@ public class MonthView extends CalendarView implements HasWeekSelectionHandlers<
 		return appointmentWidgets;
 	}
 
+	@Override
 	public void onDeleteKeyPressed() {
 		if (calendarWidget.getSelectedAppointment() != null)
 			calendarWidget.fireDeleteEvent(calendarWidget

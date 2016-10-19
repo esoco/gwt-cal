@@ -344,7 +344,8 @@ public class CalendarWidget extends InteractiveWidget implements
       view.doSizing();
    }
 
-   public void onLoad() {
+   @Override
+public void onLoad() {
 	   Scheduler.get().scheduleDeferred(new ScheduledCommand() {
 		public void execute() {
 			refresh();
@@ -429,7 +430,8 @@ public class CalendarWidget extends InteractiveWidget implements
       view.onSingleClick(element, event);
    }
    
-   public void onMouseOver(Element element, Event event) {
+   @Override
+public void onMouseOver(Element element, Event event) {
 	   view.onMouseOver(element, event);
    }
 

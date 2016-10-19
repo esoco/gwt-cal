@@ -328,6 +328,7 @@ public class Appointment implements Comparable<Appointment>, Serializable {
 		this.readOnly = readOnly;
 	}
 	
+	@Override
 	public Appointment clone() {
 		Appointment clone = new Appointment();
 		clone.setId(this.id);

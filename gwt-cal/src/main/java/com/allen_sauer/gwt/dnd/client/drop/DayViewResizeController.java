@@ -54,6 +54,7 @@ public class DayViewResizeController extends AbstractDragController {
 	}
 	
 
+	@Override
 	@SuppressWarnings("deprecation")
 	public void dragEnd() {
 		AppointmentWidget apptWidget = (AppointmentWidget)context.draggable.getParent();

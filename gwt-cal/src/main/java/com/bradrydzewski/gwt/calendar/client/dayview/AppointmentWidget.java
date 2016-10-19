@@ -58,7 +58,8 @@ public class AppointmentWidget extends FlowPanel {
          setElement(DOM.createDiv());
       }
 
-      public void add(Widget w) {
+      @Override
+	public void add(Widget w) {
          super.add(w, getElement());
       }
 
@@ -200,11 +201,13 @@ public class AppointmentWidget extends FlowPanel {
       DOM.setStyleAttribute(this.getElement(), "height", height + "px");
    }
 
-   public String getTitle() {
+   @Override
+public String getTitle() {
       return title;
    }
 
-   public void setTitle(String title) {
+   @Override
+public void setTitle(String title) {
       this.title = title;
       DOM.setInnerHTML(headerPanel.getElement(), title);
    }

@@ -84,6 +84,7 @@ public class DayView extends CalendarView {
 		return (2 * (dayViewBody.getScrollPanel().getOffsetHeight() / 3));
 	}
 	
+	@Override
 	@SuppressWarnings("deprecation")
 	public void doLayout() {
 		// PERFORM APPOINTMENT LAYOUT NOW
@@ -217,6 +218,7 @@ public class DayView extends CalendarView {
                 getSettings().getIntervalsPerHour() * getSettings().getPixelsPerInterval());
     }
 	
+	@Override
 	public void doSizing() {
 		if (calendarWidget.getOffsetHeight() > 0) {
 			int height = 0;
@@ -235,12 +237,14 @@ public class DayView extends CalendarView {
 		}
 	}
 
+	@Override
 	public void onDeleteKeyPressed() {
 		if (calendarWidget.getSelectedAppointment() != null) {
 			calendarWidget.fireDeleteEvent(calendarWidget.getSelectedAppointment());
 		}
 	}
 
+	@Override
 	public void onDoubleClick(Element element, Event event) {
 
 		List<AppointmentWidget> list = findAppointmentWidgetsByElement(element);
@@ -257,6 +261,7 @@ public class DayView extends CalendarView {
 		}
 	}
 
+	@Override
 	public void onSingleClick(final Element element, final Event event) {
 
 		// Ignore the scroll panel
@@ -278,6 +283,7 @@ public class DayView extends CalendarView {
 		}
 	}
 	
+	@Override
 	public void onMouseOver(final Element element, final Event event) {
 		Appointment appointment = findAppointmentByElement(element);
 		calendarWidget.fireMouseOverEvent(appointment, element);
@@ -309,18 +315,22 @@ public class DayView extends CalendarView {
 		}
 	}
 
+	@Override
 	public void onRightArrowKeyPressed() {
 		calendarWidget.selectNextAppointment();
 	}
 
+	@Override
 	public void onUpArrowKeyPressed() {
 		calendarWidget.selectPreviousAppointment();
 	}
 
+	@Override
 	public void onDownArrowKeyPressed() {
 		calendarWidget.selectNextAppointment();
 	}
 
+	@Override
 	public void onLeftArrowKeyPressed() {
 		calendarWidget.selectPreviousAppointment();
 	}
@@ -581,11 +591,13 @@ public class DayView extends CalendarView {
 		return appointmentAdapters;
 	}
 
+	@Override
 	public HandlerRegistration addWeekSelectionHandler(
 			WeekSelectionHandler<Date> handler) {
 		return dayViewHeader.addWeekSelectionHandler(handler);
 	}
 
+	@Override
 	public HandlerRegistration addDaySelectionHandler(
 			DaySelectionHandler<Date> handler) {
 		return dayViewHeader.addDaySelectionHandler(handler);

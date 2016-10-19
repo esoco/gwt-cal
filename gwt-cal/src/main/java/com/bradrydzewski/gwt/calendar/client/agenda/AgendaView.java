@@ -191,6 +191,7 @@ public class AgendaView extends CalendarView {
 	/**
 	 * Adds the calendar view to the calendar widget and performs required formatting.
 	 */
+	@Override
 	public void attach(CalendarWidget widget) {
 		super.attach(widget);
 
@@ -207,6 +208,7 @@ public class AgendaView extends CalendarView {
 	 * Gets the style name associated with this particular view
 	 * @return Style name.
 	 */
+	@Override
 	public String getStyleName() {
 		return styleName;
 	}
@@ -385,6 +387,7 @@ public class AgendaView extends CalendarView {
 		
 	}
 	
+	@Override
 	public void onMouseOver(Element element, Event event) {
 		
 	}
